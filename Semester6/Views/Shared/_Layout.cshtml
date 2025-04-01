@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Semester6.styles.css" asp-append-version="true" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        Background: '#343434',
+                        FooterColor: '#272727',
+                        MainColor: '#8D0B0B',
+                        SecondColor: '#C72929'
+                    },
+                    fontFamily: {
+                        libre: ['"Libre Franklin"', 'sans-serif'], // Custom font alias
+                    },
+                },
+            },
+        };
+    </script>
 </head>
 <body>
     <header>
