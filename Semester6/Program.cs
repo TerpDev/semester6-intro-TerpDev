@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Semester6
 {
     public class Program
@@ -5,6 +7,9 @@ namespace Semester6
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<ToetsContext>(options =>
+options.UseSqlServer("Server=LAPTOP-DANIEL\\MSSQLSERVER02;Database=ToetsDB;Trusted_Connection=True;TrustServerCertificate=True"));
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -18,6 +23,7 @@ namespace Semester6
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

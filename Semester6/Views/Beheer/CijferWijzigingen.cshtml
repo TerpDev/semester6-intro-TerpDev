@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Semester6.Models.CijferWijziging>
+
+<h2>Cijferwijzigingen</h2>
+
+<table id="wijzigingenTable" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ToetsResultaatID</th>
+            <th>Oud Cijfer</th>
+            <th>Nieuw Cijfer</th>
+            <th>Datum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var w in Model)
+        {
+            <tr>
+                <td>@w.Id</td>
+                <td>@w.ToetsResultaatId</td>
+                <td>@w.OudCijfer</td>
+                <td>@w.NieuwCijfer</td>
+                <td>@w.WijzigingsDatum</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#wijzigingenTable').DataTable();
+        });
+    </script>
+}
